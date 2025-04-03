@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ${SPRING_DATABASE_NAME}
+  datasource:
+    url: ${SPRING_DATABASE_URL}
+    username: ${SPRING_DATABASE_USERNAME}
+    password: ${SPRING_DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  config:
+    import: optional:file:.env[.properties]
+  data:
+    jdbc:
+      dialect: postgresql
